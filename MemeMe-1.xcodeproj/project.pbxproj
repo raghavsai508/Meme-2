@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6752D7920609D3E001A1ADA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6752D7820609D3E001A1ADA /* AppDelegate.swift */; };
-		A6752D7B20609D3E001A1ADA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6752D7A20609D3E001A1ADA /* ViewController.swift */; };
+		A6752D7B20609D3E001A1ADA /* MemeEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6752D7A20609D3E001A1ADA /* MemeEditorVC.swift */; };
 		A6752D7E20609D3E001A1ADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6752D7C20609D3E001A1ADA /* Main.storyboard */; };
 		A6752D8020609D3E001A1ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6752D7F20609D3E001A1ADA /* Assets.xcassets */; };
 		A6752D8320609D3E001A1ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6752D8120609D3E001A1ADA /* LaunchScreen.storyboard */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		A6752D7520609D3E001A1ADA /* MemeMe-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6752D7820609D3E001A1ADA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6752D7A20609D3E001A1ADA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6752D7A20609D3E001A1ADA /* MemeEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorVC.swift; sourceTree = "<group>"; };
 		A6752D7D20609D3E001A1ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6752D7F20609D3E001A1ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6752D8220609D3E001A1ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			children = (
 				A6B3817B206B164D00CCAACA /* Models */,
 				A6752D7820609D3E001A1ADA /* AppDelegate.swift */,
-				A6752D7A20609D3E001A1ADA /* ViewController.swift */,
+				A6752D7A20609D3E001A1ADA /* MemeEditorVC.swift */,
 				A6752D7C20609D3E001A1ADA /* Main.storyboard */,
 				A6752D7F20609D3E001A1ADA /* Assets.xcassets */,
 				A6752D8120609D3E001A1ADA /* LaunchScreen.storyboard */,
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B3817D206B167300CCAACA /* Meme.swift in Sources */,
-				A6752D7B20609D3E001A1ADA /* ViewController.swift in Sources */,
+				A6752D7B20609D3E001A1ADA /* MemeEditorVC.swift in Sources */,
 				A6752D7920609D3E001A1ADA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,11 +369,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MemeMe-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftentusiast.MemeMe-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,11 +386,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MemeMe-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftentusiast.MemeMe-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

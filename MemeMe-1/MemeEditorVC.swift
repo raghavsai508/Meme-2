@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorVC.swift
 //  MemeMe-1
 //
 //  Created by Raghav Sai Cheedalla on 3/19/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
+class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 
     //MARK: Outlet Properties
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -22,7 +22,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.setupTextFieldUI()
+        self.customizeTextField(textField: topTextField, defaultText: "TOP")
+        self.customizeTextField(textField: bottomTextField, defaultText: "BOTTOM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +39,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     //MARK: UISetup methods
-    func setupTextFieldUI() {
+    func customizeTextField(textField: UITextField, defaultText: String) {
         
         let memeTextAttributes:[String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
@@ -46,30 +47,19 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSAttributedStringKey.strokeWidth.rawValue: -3]
         
-        topTextField.text = "TOP"
-        topTextField.delegate = self
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.delegate = self
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = .center
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.text = defaultText
+        textField.textAlignment = .center
     }
     
     //MARK: Action methods
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        self.present(imagePickerController, animated: true, completion: nil)
+        self.pickImageOfType(.photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
-        self.present(imagePickerController, animated: true, completion: nil)
+        self.pickImageOfType(.camera)
     }
     
     @IBAction func shareMemeAction(_ sender: Any) {
@@ -88,6 +78,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     }
     
+    //MARK: Action Helper methods
+    func pickImageOfType(_ sourceType: UIImagePickerControllerSourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = sourceType
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
     
     func save(memedImage: UIImage) {
         // Create the meme
@@ -154,7 +151,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     //MARK: Keyboard Helper Methods
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
