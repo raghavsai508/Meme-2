@@ -14,7 +14,7 @@ class MemeCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.memeImage.image = nil
+        memeImage.image = nil
     }
     
 }

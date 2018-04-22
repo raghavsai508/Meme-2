@@ -21,26 +21,26 @@ class MemeTableVC: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView?.reloadData()
+        tableView?.reloadData()
     }
     
     //MARK: Action methds
     
     @IBAction func showMemeEditView(_ sender: Any) {
-        let memeEditorVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorVC") as! MemeEditorVC
-        self.navigationController?.present(memeEditorVC, animated: true, completion: nil)
+        let memeEditorVC = storyboard!.instantiateViewController(withIdentifier: "MemeEditorVC") as! MemeEditorVC
+        navigationController?.present(memeEditorVC, animated: true, completion: nil)
     }
     
     // MARK: UITableViewDataSource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell") as! MemeTableViewCell
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let meme = memes[(indexPath as NSIndexPath).row]
         
         // Set the name and image
         cell.memeTitleLabel.text = meme.topText + ".." + meme.bottomText
@@ -51,10 +51,10 @@ class MemeTableVC: UITableViewController {
 
     //MARK: UITableViewDelegate methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailVC
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let detailVC = storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailVC
+        let meme = memes[(indexPath as NSIndexPath).row]
         detailVC.meme = meme
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
