@@ -67,7 +67,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="134" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TrG-re-23c">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TrG-re-23c">
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="135"/>
                                         </imageView>
                                     </subviews>
@@ -119,10 +119,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zlc-g8-LZf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zlc-g8-LZf">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="89.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="3Ax-Ig-S6s"/>
+                                                <constraint firstAttribute="height" constant="90" id="lhr-DX-Ell"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keJ-gI-tzx">
@@ -184,12 +185,12 @@
         <!--Meme DetailVC-->
         <scene sceneID="QSw-0v-KdY">
             <objects>
-                <viewController id="EDh-8e-7AH" customClass="MemeDetailVC" customModule="MemeMe_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailVC" id="EDh-8e-7AH" customClass="MemeDetailVC" customModule="MemeMe_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l16-KA-mZU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aso-ci-sPE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aso-ci-sPE">
                                 <rect key="frame" x="0.0" y="221" width="375" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="OPH-0a-IZZ"/>
@@ -216,7 +217,7 @@
         <!--Meme EditorVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeEditorVC" customModule="MemeMe_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorVC" id="BYZ-38-t0r" customClass="MemeEditorVC" customModule="MemeMe_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,11 +231,15 @@
                                                 <action selector="shareMemeAction:" destination="BYZ-38-t0r" id="tXj-Wy-ir3"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="eEO-br-qmw"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="eEO-br-qmw">
+                                            <connections>
+                                                <action selector="cancelAction:" destination="BYZ-38-t0r" id="ALg-Mo-VLT"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-XO-nLq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-XO-nLq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="LRh-Hg-1Fy">

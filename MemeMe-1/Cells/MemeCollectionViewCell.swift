@@ -12,4 +12,9 @@ class MemeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var memeImage: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.memeImage.image = nil
+    }
+    
 }

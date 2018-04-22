@@ -78,6 +78,11 @@ class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigatio
     
     }
     
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     //MARK: Action Helper methods
     func pickImageOfType(_ sourceType: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()
@@ -91,6 +96,7 @@ class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
