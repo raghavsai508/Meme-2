@@ -70,16 +70,15 @@ class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigatio
                 print("cancelled")
                 return
             }
-            if activityType == UIActivityType.saveToCameraRoll {
-                self.save(memedImage: memedImage)
-            }
+            self.save(memedImage: memedImage)
+            self.dismissVC()
         }
         present(activityViewController, animated: true, completion: nil)
     
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismissVC()
     }
     
     
@@ -96,14 +95,17 @@ class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
+    }
+    
+    func dismissVC() {
         dismiss(animated: true, completion: nil)
-        
     }
     
     func generateMemedImage() -> UIImage {
         
         // TODO: Hide toolbar and navbar
         hideShowToolNavBars()
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -129,12 +131,11 @@ class MemeEditorVC: UIViewController,UIImagePickerControllerDelegate,UINavigatio
             imagePickerView.image = image
         }
         
-        dismiss(animated: true, completion: nil)
-        
+        dismissVC()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismissVC()
     }
     
     //MARK: UITextFieldDelegate methods

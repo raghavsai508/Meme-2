@@ -191,18 +191,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aso-ci-sPE">
-                                <rect key="frame" x="0.0" y="221" width="375" height="225"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="OPH-0a-IZZ"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Aso-ci-sPE" firstAttribute="centerX" secondItem="l16-KA-mZU" secondAttribute="centerX" id="PCj-gw-94Z"/>
-                            <constraint firstItem="Aso-ci-sPE" firstAttribute="centerY" secondItem="l16-KA-mZU" secondAttribute="centerY" id="TqX-6A-B6B"/>
+                            <constraint firstItem="Aso-ci-sPE" firstAttribute="top" secondItem="wRd-yN-xAH" secondAttribute="top" id="1cI-Uu-bDI"/>
                             <constraint firstItem="Aso-ci-sPE" firstAttribute="leading" secondItem="wRd-yN-xAH" secondAttribute="leading" id="Udr-7w-ETn"/>
                             <constraint firstItem="Aso-ci-sPE" firstAttribute="trailing" secondItem="wRd-yN-xAH" secondAttribute="trailing" id="WN9-Bb-dNk"/>
+                            <constraint firstItem="wRd-yN-xAH" firstAttribute="bottom" secondItem="Aso-ci-sPE" secondAttribute="bottom" id="l0h-vb-GUp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wRd-yN-xAH"/>
                     </view>
